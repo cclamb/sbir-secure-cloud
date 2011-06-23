@@ -1,1 +1,10 @@
 \section{Technical Proposal}
+Cloud systems, as individual components of larger aggregated systems, need to be continuously monitored for security and reliability, and if determined to be out of compliance for any reason, those elements need to be triaged.  To do this, component system responses must be evaluated against some known standard to evaluate deviation.  A simple example is evaluating a request/response cycle for elapsed response times, where if that response time exceeds a specific threshold, an alarm is triggered, or the slow system is replaced by a failover element.
+
+This consists of two distinct activities --- an \textit{evaluation} stage, followed by a \textit{decision} stage.  Furthermore, either stage can be on or offline; online evaluation occurs is soft real-time, while offline evaluation occurs without any real-time restrictions.  Returning to our response time example, online evaluation and decision would check the response time to a request following the request's response and immediately activate failover systems if the response time is greater than a threshold.  Offline evaluation could occur through a logging system, where a sensor tracks information with respect to response time and logs that information for later review; that later review would evaluate that response time and act accordingly.
+
+Furthermore, evaluation activities can either be standalone, whereby the cloud system as a whole makes decisions with respect to the dependability of single elements based on individual measurements, or aggregated, in which some kind of trust authority makes decisions with respect to system inclusion based on more than one measured response.
+
+\section{Data Model}
+
+\section{Conceptual Architecture}
